@@ -103,7 +103,7 @@ body {
 .end {
     height: 1000px;
     background-color: rgb(255, 255, 255);
-    margin-top: 500px;
+    margin-top: 800px;
 }
 
 
@@ -119,7 +119,7 @@ body {
 }
 
 .revealed {
-    animation: x-move-left 1s normal forwards ;
+    animation: x-move-left 0.2s normal forwards ;
     animation-iteration-count: 1;
 }
 
@@ -136,7 +136,7 @@ body {
   }
 
   .revealedback {
-    animation: x-moveback-left 0.7s normal forwards ;
+    animation: x-moveback-left 0.2s normal forwards ;
     animation-iteration-count: 1;
 }
 @keyframes x-moveback-left{
@@ -152,10 +152,10 @@ body {
 
 
   .revealedright {
-    animation: x-move-right 1s normal forwards;
+    animation: x-move-right 0.2s normal forwards;
 }
 .revealedrightback {
-    animation: x-moveback-right 0.7s normal forwards ;
+    animation: x-moveback-right 0.2s normal forwards ;
     animation-iteration-count: 1;
 }
 

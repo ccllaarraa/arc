@@ -66,7 +66,7 @@ gsap.to(".text--content", {
         scrub: true,
         toggleActions: "restart pause reverse reset"
     },
-    duration: 1,
+    duration: 3,
     scale: 1.05,
     opacity: 1
 });
@@ -77,7 +77,7 @@ gsap.to(".logo--left", {
     scrollTrigger: {
         trigger: ".end",
         start: "center center",
-        end: "bottom top",
+        end: "bottom top-=10px",
         endTrigger:"footer",
         onEnter: () => $(".logo--left").addClass('revealed').removeClass('revealedback'),
         onLeave: () => $(".logo--left").removeClass('revealed').addClass('revealedback'),
@@ -92,7 +92,7 @@ gsap.to(".logo--right", {
     scrollTrigger: {
         trigger: ".end",
         start: "center center",
-        end: "bottom top",
+        end: "bottom top-=10px",
         endTrigger:"footer",
         onEnter: () => $(".logo--right").addClass('revealedright').removeClass('revealedrightback'),
         onLeave: () => $(".logo--right").removeClass('revealedright').addClass('revealedrightback'),
