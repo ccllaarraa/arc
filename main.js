@@ -1,43 +1,98 @@
 gsap.registerPlugin(ScrollTrigger);
 
 
-
-function startAnim()  {
+// on click
+ function startAnim()  {
         gsap.to('.logo--left', {
             x:-265,
             y:-187,
-            duration: 2,
-            pin: true
+            duration: 1,
+            start: "top top",
+            end: "+=100%"
         });
         gsap.to('.logo--right', {
             x:370,
             y:190,
-            duration: 2,
-            pin: true
+            duration: 1,
+            start: "top top",
+            end: "+=100%"
         });
+        gsap.to(".hiddenImage img", {
+            rotation: 180,
+            duration: 1.5,
+        
+        });
+        TweenMax.to($(".hiddenImage img"), .7, {scaleX:1, scaleY:1, opacity:1});
+        
+        var center = document.getElementById("cent");
+        center.className += " relative";
+
+
         var hi = document.getElementById("hi");
         hi.className += " fadeIn";
-}
+
+        var overflow = document.getElementById("overflow");
+        overflow.className += " scroll";
+
+ }
 
 
-gsap.to(".hiddenImage img", {
+
+
+gsap.to(".hiddenImage", {
     scrollTrigger: {
-        trigger: ".hiddenImage img",
-        toggleActions: "play none none none"
+        trigger: ".hiddenImage",
+        start: "60%+=5px center ",
+        end: "bottom 200px",
+        toggleActions: "restart pause reverse reset"
     },
-    rotation: 360,
+    duration: 0.6,
+    scale: 0.3,
+    opacity: 0
+});
+
+
+gsap.to(".text--content", {
+    scrollTrigger: {
+        trigger: ".text--content",
+        start: "center bottom",
+        end: "bottom bottom",
+        scrub: true,
+        toggleActions: "restart pause reverse reset"
+    },
     duration: 1,
-    pin: true
+    scale: 1.05,
+    opacity: 1
 });
 
 
 
-gsap.to(".center", {
+gsap.to(".logo--left", {
     scrollTrigger: {
-        trigger: ".center",
-        toggleActions: "play none none none"
-    },
-    rotation: 360,
-    duration: 1,
-    pin: true
-})
+        trigger: ".end",
+        start: "center center",
+        end: "bottom top",
+        endTrigger:"footer",
+        onEnter: () => $(".logo--left").addClass('revealed'),
+        onLeave: () => $(".logo--left").removeClass('revealed'),
+        onEnterBack: () => $(".logo--left").addClass('revealed'),
+        onLeaveBack: () => $(".logo--left").removeClass('revealed'),
+    }
+ 
+});
+
+
+gsap.to(".logo--right", {
+    scrollTrigger: {
+        trigger: ".end",
+        start: "center center",
+        end: "bottom top",
+        endTrigger:"footer",
+        onEnter: () => $(".logo--right").addClass('revealedright'),
+        onLeave: () => $(".logo--right").removeClass('revealedright'),
+        onEnterBack: () => $(".logo--right").addClass('revealedright'),
+        onLeaveBack: () => $(".logo--right").removeClass('revealedright'),
+    }
+ 
+});
+
