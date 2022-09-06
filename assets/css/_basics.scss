@@ -50,8 +50,35 @@ body {
         img {
             opacity: 0.2;
         }
+        video {
+            // width: 613px;
+            // height: 440px;
+            object-fit: cover;
+            scale: 0;
+        }
     }
 }
+
+.bigger {
+    animation: bigger 0.5s linear forwards ;
+    animation-iteration-count: 1;
+}
+
+@keyframes bigger{
+    0%{
+        width: 180px;
+        height: 60px;
+        filter: blur(4px);
+    }
+    99% {
+        filter: blur(4px);
+    }
+     100%{
+        width: 613px;
+        height: 440px;
+        filter: blur(0px);
+    }
+  }
 
 .text {
     width: 100vw;

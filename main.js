@@ -6,23 +6,24 @@ gsap.registerPlugin(ScrollTrigger);
         gsap.to('.logo--left', {
             x:-265,
             y:-187,
-            duration: 1,
+            duration: 0.5,
             start: "top top",
-            end: "+=100%"
+            end: "+=100%",
+            ease: "none"
         });
         gsap.to('.logo--right', {
             x:370,
             y:190,
-            duration: 1,
+            duration: 0.5,
+            ease: "none",
             start: "top top",
             end: "+=100%"
         });
-        gsap.to(".hiddenImage img", {
-            rotation: 180,
+        gsap.to(".hiddenImage video", {
             duration: 1.5,
-        
+            scale: 1,
         });
-        TweenMax.to($(".hiddenImage img"), .7, {scaleX:1, scaleY:1, opacity:1});
+         TweenMax.to($(".hiddenImage video"), .7, {scaleX:1, scaleY:1, opacity:1});
         
         var center = document.getElementById("cent");
         center.className += " relative";
@@ -34,6 +35,9 @@ gsap.registerPlugin(ScrollTrigger);
         var overflow = document.getElementById("overflow");
         overflow.className += " scroll";
 
+        var video = document.getElementById("videoid");
+        video.className += " bigger";
+
  }
 
 
@@ -42,13 +46,15 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.to(".hiddenImage", {
     scrollTrigger: {
         trigger: ".hiddenImage",
-        start: "60%+=5px center ",
+        start: "70%+=5px center ",
         end: "bottom 200px",
-        toggleActions: "restart pause reverse reset"
+        toggleActions: "restart pause reverse reset",
     },
-    duration: 0.6,
-    scale: 0.3,
-    opacity: 0
+    duration: 0.3,
+    scale: 0.7,
+    opacity: 0,
+
+    filter:"blur(4px)"
 });
 
 
