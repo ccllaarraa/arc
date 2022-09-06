@@ -73,10 +73,10 @@ gsap.to(".logo--left", {
         start: "center center",
         end: "bottom top",
         endTrigger:"footer",
-        onEnter: () => $(".logo--left").addClass('revealed'),
-        onLeave: () => $(".logo--left").removeClass('revealed'),
-        onEnterBack: () => $(".logo--left").addClass('revealed'),
-        onLeaveBack: () => $(".logo--left").removeClass('revealed'),
+        onEnter: () => $(".logo--left").addClass('revealed').removeClass('revealedback'),
+        onLeave: () => $(".logo--left").removeClass('revealed').addClass('revealedback'),
+        onEnterBack: () => $(".logo--left").addClass('revealed').removeClass('revealedback'),
+        onLeaveBack: () => $(".logo--left").removeClass('revealed').addClass('revealedback'),
     }
  
 });
@@ -88,10 +88,10 @@ gsap.to(".logo--right", {
         start: "center center",
         end: "bottom top",
         endTrigger:"footer",
-        onEnter: () => $(".logo--right").addClass('revealedright'),
-        onLeave: () => $(".logo--right").removeClass('revealedright'),
-        onEnterBack: () => $(".logo--right").addClass('revealedright'),
-        onLeaveBack: () => $(".logo--right").removeClass('revealedright'),
+        onEnter: () => $(".logo--right").addClass('revealedright').removeClass('revealedrightback'),
+        onLeave: () => $(".logo--right").removeClass('revealedright').addClass('revealedrightback'),
+        onEnterBack: () => $(".logo--right").addClass('revealedright').removeClass('revealedrightback'),
+        onLeaveBack: () => $(".logo--right").removeClass('revealedright').addClass('revealedrightback'),
     }
  
 });

@@ -92,7 +92,8 @@ body {
 }
 
 .revealed {
-    animation: x-move-left 1s ease-in-out;
+    animation: x-move-left 1s normal forwards ;
+    animation-iteration-count: 1;
 }
 
 
@@ -107,11 +108,29 @@ body {
     }
   }
 
+  .revealedback {
+    animation: x-moveback-left 0.7s normal forwards ;
+    animation-iteration-count: 1;
+}
+@keyframes x-moveback-left{
+    0%{
+      transform: translate(0, 0);
+ 
+    }
+     100%{
+      transform: translate(-265px, -187px);
+
+    }
+  }
+
 
   .revealedright {
-    animation: x-move-right 1s ease-in-out;
+    animation: x-move-right 1s normal forwards;
 }
-
+.revealedrightback {
+    animation: x-moveback-right 0.7s normal forwards ;
+    animation-iteration-count: 1;
+}
 
 @keyframes x-move-right{
     0%{
@@ -120,6 +139,16 @@ body {
     }
      100%{
       transform: translate(0, 0);
+
+    }
+  }
+  @keyframes x-moveback-right{
+    0%{
+      transform: translate(0, 0);
+ 
+    }
+     100%{
+      transform: translate(370px, 190px);
 
     }
   }
